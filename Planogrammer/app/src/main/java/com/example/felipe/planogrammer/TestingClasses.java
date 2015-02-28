@@ -10,10 +10,14 @@ public class TestingClasses
 {
     public static void main(String[] Args)
     {
+        Store workingStore;
+        Shelf workingShelf;
+        Item workingItem;
         System.out.println("Creating a new plannagram");
-        Store myStore = new Store();
-        Shelf s1 = new Shelf(30, 300, LEFT, 1, 0);
-        Item i1 = new Item(4,4,0,0, "2839948CE");
+        workingStore = new Store();
+        workingShelf = new Shelf(30, 300, LEFT, 1, 0);
+        workingStore.addShelf(workingShelf);
+        workingItem = new Item(4,4,0,0, "2839948CE");
         System.out.println(i1.getUPC());
     }
 }

@@ -24,19 +24,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     public void onClick(View v) {
 
         if (v.getId() == R.id.button) {
-            startActivity(new Intent(MainActivity.this, ScannerPage.class));
+            startActivity(new Intent(MainActivity.this, JSONActivity.class));
         }
 
     }
-
-
-
-
-
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

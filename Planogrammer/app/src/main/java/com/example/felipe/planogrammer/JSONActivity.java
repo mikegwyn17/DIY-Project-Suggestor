@@ -22,7 +22,6 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Iterator;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -89,27 +88,7 @@ public class JSONActivity extends Activity implements View.OnClickListener {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            try {
-                JSONObject jsonObject= new JSONObject(result);
-                String name = jsonObject.getString("name");
-                JSONObject attributesObj = jsonObject.getJSONObject("attributes");
-                Iterator<String> keys = attributesObj.keys();
-                StringBuffer output = new StringBuffer();
-                output.append("Name: ");
-                output.append(name + "\n");
-                while(keys.hasNext()) {
-                    String temp = keys.next();
-                    output.append(temp);
-                    output.append(": ");
-                    output.append(attributesObj.getString(temp));
-                    output.append("\n");
-                }
-                jsontxt.setText(output.toString());
-            }
-
-            catch(JSONException e) {
-
-            }
+            jsontxt.setText(result);
         }
     }
     private String downloadUrl(String myurl) throws IOException {

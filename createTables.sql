@@ -20,3 +20,8 @@ Item_Shelf_ID NUMBER(1,1) NOT NULL,
 CONSTRAINT Item_FK FOREIGN KEY Shelf_ID REFERENCES Shelf_T (Shelf_ID),
 CONSTRAINT Item_PK PRIMARY KEY (Item_UPC)};
 
+CREATE PROCEDURE AddToStore @store, @shelf
+INSERT INTO tb_shelves_in_store (store_id, shelf_id) VALUES (@store, @shelf)
+
+CREATE PROCEDURE AddToShelf @shelf, @item
+
